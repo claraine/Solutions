@@ -40,4 +40,31 @@ public class Solutions {
         	System.out.println("Friendship");
         }
 	}
+	
+	/**
+ 	* This method determines the number of moves that the King piece can make given its position on the board.
+ 	*  
+ 	* @param position is the current position of the King
+ 	* @return the number of moves the King can make
+ 	*/
+    	public static int determineMoves(String position){
+    		char[] a = position.toCharArray();
+			if (a[0] == 'a' || a [0] == 'h'){
+			if(a[1] == '1' || a [1] == '8'){
+				return 3;
+			} else if (a[1] < '1' || a[1] > '8'){
+				return 0;
+			} else{
+				return 5;
+			}
+		} else if (a[0] > 'h' || a[0] < 'a'){
+			return 0;
+		} else if (a[1] == '1' || a [1] == '8'){
+			return 5;
+		} else if (a[1] < '1' || a[1] > '8'){
+			return 0;
+		} else {
+			return 8;
+		}
+	}
 }
